@@ -1,6 +1,23 @@
 # 🌾 Sistem Pakar Diagnosa Penyakit Tanaman Padi
 
-Sistem pakar berbasis web untuk mendiagnosis hama dan penyakit pada tanaman padi menggunakan metode forward chaining dan certainty factor.
+## 📋 Deskripsi Sistem
+
+Sistem Pakar untuk Diagnosis Hama dan Penyakit Umum pada Tanaman Padi adalah aplikasi berbasis web yang menggunakan teknologi kecerdasan buatan untuk membantu petani dan penyuluh pertanian dalam mengidentifikasi hama serta penyakit yang menyerang tanaman padi. 
+
+Sistem ini dibangun dengan metode **Expert System** yang mengimplementasikan **Forward Chaining** dan **Backward Chaining** untuk melakukan diagnosis berdasarkan gejala-gejala visual yang diamati pada tanaman padi, seperti perubahan warna daun, bercak, kondisi batang, atau bentuk malai.
+
+### 🎯 Tujuan Sistem
+- Membantu petani melakukan diagnosis dini terhadap hama dan penyakit
+- Memberikan rekomendasi penanganan yang tepat dan efektif
+- Meningkatkan produktivitas pertanian padi
+- Mengurangi kerugian akibat serangan hama dan penyakit
+
+### 🌟 Keunggulan
+- ✅ Diagnosis akurat dengan perhitungan **Certainty Factor**
+- ✅ Rekomendasi penanganan hayati dan kimiawi
+- ✅ Penjelasan alur penalaran yang transparan
+- ✅ Interface yang mudah digunakan
+- ✅ Basis pengetahuan tervalidasi dari pakar
 
 ## 📁 Struktur Folder
 
@@ -29,41 +46,116 @@ rice-expert-system/
     └── history.json             # Consultation history
 ```
 
-## 🚀 Cara Menjalankan
+## 🚀 Instalasi dan Cara Menjalankan
 
-### 1. Install Dependencies
+### 📋 Prasyarat
+Sebelum memulai, pastikan Anda sudah menginstall:
+- **Python 3.8 atau lebih tinggi** ([Download Python](https://www.python.org/downloads/))
+- **pip** (biasanya sudah terinstall bersama Python)
+- **Git** (opsional, untuk clone repository)
 
+### 📥 Langkah 1: Clone Project
+
+**Clone dengan Git**
+```bash
+git clone https://github.com/username/sistem-pakar-padi.git
+cd sistem-pakar-padi
+```
+
+### 🔧 Langkah 2: Buat Virtual Environment
+
+Buka **Command Prompt** atau **PowerShell** di folder project, lalu jalankan:
+
+```bash
+python -m venv venv
+```
+
+> **📌 Catatan:** Virtual environment berfungsi untuk mengisolasi dependencies project agar tidak bentrok dengan project Python lainnya.
+
+### ⚡ Langkah 3: Aktifkan Virtual Environment
+
+**Untuk Windows (Command Prompt):**
+```bash
+venv\Scripts\activate
+```
+
+**Untuk Windows (PowerShell):**
+```bash
+venv\Scripts\Activate.ps1
+```
+
+**Untuk Linux/Mac:**
+```bash
+source venv/bin/activate
+```
+
+Jika berhasil, terminal Anda akan menampilkan `(venv)` di awal baris:
+```bash
+(venv) PS D:\Coding\Sistem-pakar-tanaman-padi> (sebagai contoh saja)
+```
+
+> **⚠️ Troubleshooting PowerShell:**  
+> Jika muncul error "running scripts is disabled", jalankan:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+### 📦 Langkah 4: Install Dependencies
+
+Install Streamlit dan library yang diperlukan:
+
+```bash
+pip install streamlit
+```
+
+```bash
+pip install streamlit jsonschema
+```
+
+**Atau install semua dependencies sekaligus:**
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Pastikan File Knowledge Base Ada
+### ✅ Langkah 5: Verifikasi Instalasi
 
-Buat file `data/knowledge_base.json` dengan struktur rules Anda.
+Cek apakah Streamlit sudah terinstall dengan benar:
 
-Contoh minimal:
-```json
-{
-  "R1": {
-    "IF": ["Daun menguning", "Ada serangga pada tanaman"],
-    "THEN": "Hama Wereng Coklat",
-    "CF": 0.85,
-    "rekomendasi": [
-      "Gunakan insektisida berbahan aktif imidakloprid",
-      "Tanam varietas tahan wereng"
-    ],
-    "source": "Kementerian Pertanian RI, 2023"
-  }
-}
+```bash
+streamlit --version
 ```
 
-### 3. Jalankan Aplikasi
+Output yang diharapkan:
+```
+Streamlit, version 1.28.0
+```
+
+### 🎮 Langkah 6: Jalankan Aplikasi
+
+Jalankan aplikasi dengan perintah:
 
 ```bash
 streamlit run main.py
 ```
 
-Aplikasi akan terbuka di browser pada `http://localhost:8501`
+Aplikasi akan otomatis terbuka di browser default Anda pada alamat:
+```
+http://localhost:8501
+```
+
+Jika tidak terbuka otomatis, buka browser dan akses URL di atas.
+
+### 🛑 Menghentikan Aplikasi
+
+Untuk menghentikan aplikasi, tekan `Ctrl + C` di terminal.
+
+### 📤 Menonaktifkan Virtual Environment
+
+Setelah selesai, nonaktifkan virtual environment dengan:
+
+```bash
+deactivate
+```
 
 ## ✨ Fitur Utama
 
