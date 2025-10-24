@@ -39,7 +39,10 @@ sistem-pakar-padi/
 │
 ├── data/                          
 │   ├── history.json
-│   └── rules.json         
+│   └── rules.json 
+| 
+├── ui/                          
+│   ├── gui_interface.py
 │
 ├── utils/                       
 │   ├── rule_loader.py
@@ -257,6 +260,15 @@ Sistem menyediakan penjelasan lengkap tentang proses reasoning:
 - **Trace Forward**: Menunjukkan rule mana yang di-trigger
 - **Step-by-step**: Urutan inferensi yang dilakukan
 - **CF Calculation**: Menampilkan perhitungan certainty factor
+
+## 📸 Screenshot/Demo
+
+### 1. Dashboard Utama
+```
+Halaman utama menampilkan statistik sistem dengan 3 metrik penting: Total Aturan, Gejala Terdaftar, dan Riwayat Konsultasi.
+
+![Dashboard Utama](https://i.im.ge/2025/10/24/nKitaG.dashboard.png) 
+``` 
 
 ## 📚 Dependencies
 
