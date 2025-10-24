@@ -266,7 +266,7 @@ Sistem menyediakan penjelasan lengkap tentang proses reasoning:
 ### 1. Dashboard Utama
 Halaman utama menampilkan statistik sistem dengan 3 metrik penting: Total Aturan, Gejala Terdaftar, dan Riwayat Konsultasi.
 
-![Dashboard Utama](https://i.im.ge/2025/10/24/nKitaG.dashboard.png) 
+<img src="https://i.im.ge/2025/10/24/nKitaG.dashboard.png" alt="Dashboard" width="800"/> 
 
 ## 📚 Dependencies
 
