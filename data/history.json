@@ -24,5 +24,33 @@
     "rekomendasi": "Gunakan benih bersertifikat dan fungisida berbahan aktif Tebuconazole, serta hindari kondisi lembap berlebih.",
     "source": "Rice Field Guide to Pests, Diseases and Weeds in Southern NSW (2013). New South Wales Department of Primary Industries. dpi.nsw.gov.au",
     "reasoning": "\nLAPORAN PENJELASAN SISTEM PAKAR TANAMAN PADI\n============================================\nID Konsultasi: 20251024211244\nWaktu: 2025-10-24 21:12:44\nTotal Langkah: 3\n\nFAKTA-FAKTA YANG DIGUNAKAN:\n1. Ada serangga kecil di bawah daun (sumber: user_input)\n2. Bercak kehitaman pada malai (sumber: user_input)\n3. Serangga kecil perak pada daun pucat keriting (sumber: user_input)\n\nRULES YANG DIAKTIFKAN: R1, R7, R15\n\nCHAIN REASONING:\nLangkah 1: Rule 'R1' -> Ada serangga kecil di bawah daun (CF: 0.40)\nLangkah 2: Rule 'R7' -> Bercak kehitaman pada malai (CF: 0.80)\nLangkah 3: Rule 'R15' -> Serangga kecil perak pada daun pucat keriting (CF: 0.70)\n"
+  },
+  {
+    "timestamp": "2025-10-24 23:52:55",
+    "gejala": [
+      "Kerusakan akar (bintik hitam dan jamur akar)",
+      "Malai kosong",
+      "Malai terdapat bercak coklat, butirannya berkurang"
+    ],
+    "consequent": "Busuk Akar (Fusarium spp.)",
+    "cf": 0.75,
+    "rekomendasi": "Gunakan fungisida berbahan aktif Carbendazim atau Trichoderma sp., dan perbaiki aerasi tanah.",
+    "source": "Mohammed K. (2024). Rice Pests and Diseases: A Comprehensive Review of Current Management Strategies. Journal of Rice Research. omicsonline.org",
+    "reasoning": "\nLAPORAN PENJELASAN SISTEM PAKAR TANAMAN PADI\n============================================\nID Konsultasi: 20251024235255\nWaktu: 2025-10-24 23:52:55\nTotal Langkah: 3\n\nFAKTA-FAKTA YANG DIGUNAKAN:\n1. Kerusakan akar (bintik hitam dan jamur akar) (sumber: user_input)\n2. Malai kosong (sumber: user_input)\n3. Malai terdapat bercak coklat, butirannya berkurang (sumber: user_input)\n\nRULES YANG DIAKTIFKAN: R8, R16, R18\n\nCHAIN REASONING:\nLangkah 1: Rule 'R8' -> Malai kosong (CF: 0.40)\nLangkah 2: Rule 'R16' -> Malai terdapat bercak coklat, butirannya berkurang (CF: 0.70)\nLangkah 3: Rule 'R18' -> Kerusakan akar (bintik hitam dan jamur akar) (CF: 0.75)\n"
+  },
+  {
+    "timestamp": "2025-10-24 23:58:14",
+    "gejala": [
+      "Ada serangga kecil di bawah daun",
+      "Kerusakan akar di zona air",
+      "Layu dan kering",
+      "Malai gagal keluar sempurna",
+      "Malai terdapat bercak coklat, butirannya berkurang"
+    ],
+    "consequent": "Sheath and Glume Rot (Pantoea ananas)",
+    "cf": 0.7,
+    "rekomendasi": "Gunakan fungisida berbahan aktif Propiconazole dan pastikan sirkulasi udara yang baik di lahan.",
+    "source": "Rice Field Guide to Pests, Diseases and Weeds in Southern NSW (2013). New South Wales Department of Primary Industries. dpi.nsw.gov.au",
+    "reasoning": "\nLAPORAN PENJELASAN SISTEM PAKAR TANAMAN PADI\n============================================\nID Konsultasi: 20251024235814\nWaktu: 2025-10-24 23:58:14\nTotal Langkah: 5\n\nFAKTA-FAKTA YANG DIGUNAKAN:\n1. Ada serangga kecil di bawah daun (sumber: user_input)\n2. Kerusakan akar di zona air (sumber: user_input)\n3. Layu dan kering (sumber: user_input)\n4. Malai gagal keluar sempurna (sumber: user_input)\n5. Malai terdapat bercak coklat, butirannya berkurang (sumber: user_input)\n\nRULES YANG DIAKTIFKAN: R1, R2, R4, R12, R16\n\nCHAIN REASONING:\nLangkah 1: Rule 'R1' -> Ada serangga kecil di bawah daun (CF: 0.40)\nLangkah 2: Rule 'R2' -> Malai gagal keluar sempurna (CF: 0.38)\nLangkah 3: Rule 'R4' -> Layu dan kering (CF: 0.42)\nLangkah 4: Rule 'R12' -> Kerusakan akar di zona air (CF: 0.38)\nLangkah 5: Rule 'R16' -> Malai terdapat bercak coklat, butirannya berkurang (CF: 0.70)\n"
   }
 ]

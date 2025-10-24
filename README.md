@@ -264,16 +264,34 @@ Sistem menyediakan penjelasan lengkap tentang proses reasoning:
 ## 📸 Screenshot/Demo
 
 ### 1. Dashboard Utama
-Halaman utama menampilkan statistik sistem dengan 3 metrik penting: Total Aturan, Gejala Terdaftar, dan Riwayat Konsultasi.
-
-<img src="https://i.im.ge/2025/10/24/nKitaG.dashboard.png" alt="Dashboard" width="800"/> 
-
-### 1. Dashboard Utama
 
 Halaman utama menampilkan statistik sistem dengan 3 metrik penting: Total Aturan, Gejala Terdaftar, dan Riwayat Konsultasi.
 
-[<a href="https://ibb.co.com/hRqyXHPd"><img src="https://i.ibb.co.com/Gvh0skKM/dashboard.png" alt="dashboard" border="0"></a>] 
+<a href="https://ibb.co.com/hRqyXHPd"><img src="https://i.ibb.co.com/Gvh0skKM/dashboard.png" alt="dashboard" border="0"></a>
 
+### 2. Form Diagnosa
+
+Interface untuk memilih gejala yang diamati pada tanaman padi dengan fitur pencarian real-time.
+
+<a href="https://ibb.co.com/wqWw4Vw"><img src="https://i.ibb.co.com/F1w0z20/formdiagnosa.png" alt="formdiagnosa" border="0"></a>
+
+### 3. Hasil Diagnosa
+
+Menampilkan hasil analisis lengkap dengan tingkat kepercayaan dan rekomendasi penanganan. 
+
+<a href="https://ibb.co.com/wFdgwLYw"><img src="https://i.ibb.co.com/ZpfXYJNY/hasil-diagnosis.png" alt="hasil-diagnosis" border="0"></a> 
+
+### 4. Riwayat Konsultasi
+
+Kelola dan akses semua riwayat diagnosis yang pernah dilakukan.
+
+<a href="https://ibb.co.com/hJ4g8MXS"><img src="https://i.ibb.co.com/YF1NjWDx/riwayat.png" alt="riwayat" border="0"></a> 
+
+### 5. Proses Reasoning
+
+Sistem menampilkan trace lengkap dari proses inferensi Forward Chaining.
+
+<a href="https://ibb.co.com/vxLcxBN9"><img src="https://i.ibb.co.com/SXV6XxkS/reasioning.png" alt="reasioning" border="0"></a>
 
 ## 📚 Dependencies
 
@@ -294,7 +312,12 @@ Sesuaikan dengan lisensi proyek Anda.
 
 ## 🤝 Contributing
 
-Kontribusi sangat diterima! Silakan buat pull request atau issue.
+1. Muhammad Al-Hadziq Tarmizi	(2108107010022)
+2. Tasya Zahrani			(2308107010006)
+3. Dian Islami				(2308107010048)
+4. Razian Sabri				(2308107010050)
+5. Randy Maulana			(2308107010054)
+6. Muhammad Irfan Qadafi		(2408107010054)
 
 ---
 
