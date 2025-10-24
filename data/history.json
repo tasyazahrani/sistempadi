@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-10-24 21:08:55",
+    "gejala": [
+      "Leher batang layu",
+      "Malai terdapat bercak coklat, butirannya berkurang",
+      "Serangga kecil perak pada daun pucat keriting"
+    ],
+    "consequent": "Thrips (Stenchaetothrips biformis)",
+    "cf": 0.7,
+    "rekomendasi": "Gunakan insektisida berbahan aktif Imidakloprid atau Abamectin dan perbaiki drainase sawah.",
+    "source": "Mohammed K. (2024). Rice Pests and Diseases: A Comprehensive Review of Current Management Strategies. Journal of Rice Research. omicsonline.org",
+    "reasoning": "\nLAPORAN PENJELASAN SISTEM PAKAR TANAMAN PADI\n============================================\nID Konsultasi: 20251024210855\nWaktu: 2025-10-24 21:08:55\nTotal Langkah: 3\n\nFAKTA-FAKTA YANG DIGUNAKAN:\n1. Leher batang layu (sumber: user_input)\n2. Malai terdapat bercak coklat, butirannya berkurang (sumber: user_input)\n3. Serangga kecil perak pada daun pucat keriting (sumber: user_input)\n\nRULES YANG DIAKTIFKAN: R10, R15, R16\n\nCHAIN REASONING:\nLangkah 1: Rule 'R10' -> Leher batang layu (CF: 0.42)\nLangkah 2: Rule 'R15' -> Serangga kecil perak pada daun pucat keriting (CF: 0.70)\nLangkah 3: Rule 'R16' -> Malai terdapat bercak coklat, butirannya berkurang (CF: 0.70)\n"
+  },
+  {
+    "timestamp": "2025-10-24 21:12:44",
+    "gejala": [
+      "Ada serangga kecil di bawah daun",
+      "Bercak kehitaman pada malai",
+      "Serangga kecil perak pada daun pucat keriting"
+    ],
+    "consequent": "Glume Blotch (Pseudomonas syringae)",
+    "cf": 0.8,
+    "rekomendasi": "Gunakan benih bersertifikat dan fungisida berbahan aktif Tebuconazole, serta hindari kondisi lembap berlebih.",
+    "source": "Rice Field Guide to Pests, Diseases and Weeds in Southern NSW (2013). New South Wales Department of Primary Industries. dpi.nsw.gov.au",
+    "reasoning": "\nLAPORAN PENJELASAN SISTEM PAKAR TANAMAN PADI\n============================================\nID Konsultasi: 20251024211244\nWaktu: 2025-10-24 21:12:44\nTotal Langkah: 3\n\nFAKTA-FAKTA YANG DIGUNAKAN:\n1. Ada serangga kecil di bawah daun (sumber: user_input)\n2. Bercak kehitaman pada malai (sumber: user_input)\n3. Serangga kecil perak pada daun pucat keriting (sumber: user_input)\n\nRULES YANG DIAKTIFKAN: R1, R7, R15\n\nCHAIN REASONING:\nLangkah 1: Rule 'R1' -> Ada serangga kecil di bawah daun (CF: 0.40)\nLangkah 2: Rule 'R7' -> Bercak kehitaman pada malai (CF: 0.80)\nLangkah 3: Rule 'R15' -> Serangga kecil perak pada daun pucat keriting (CF: 0.70)\n"
+  }
+]
