@@ -272,7 +272,7 @@ Halaman utama menampilkan statistik sistem dengan 3 metrik penting: Total Aturan
 
 Halaman utama menampilkan statistik sistem dengan 3 metrik penting: Total Aturan, Gejala Terdaftar, dan Riwayat Konsultasi.
 
-<a href="https://ibb.co.com/hRqyXHPd"><img src="https://i.ibb.co.com/Gvh0skKM/dashboard.png" alt="dashboard" border="0"></a> 
+[![haar](https://i.im.ge/2022/10/15/2IUEUW.haar.md.png)](https://im.ge/i/2IUEUW)
 
 
 ## 📚 Dependencies
