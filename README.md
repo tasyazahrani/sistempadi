@@ -22,28 +22,29 @@ Sistem ini dibangun dengan metode **Expert System** yang mengimplementasikan **F
 ## 📁 Struktur Folder
 
 ```
-rice-expert-system/
+sistem-pakar-padi/
 │
-├── main.py                      # Entry point aplikasi
-├── requirements.txt             # Python dependencies
+├── interface.py    
+├── main_acquisition.py      
+├── main.py  
+├── README.md               
+│ 
+├── core/                        
+│   ├── acquisition.py
+│   ├── certainty_factor.py      
+│   ├── explanation_facility.py     
+│   ├── inference_engine.py
+│   ├── knowledge_base.py
+│   └── working_memory.py 
 │
-├── core/                        # Core logic
-│   ├── __init__.py
-│   ├── knowledge_base.py        # Knowledge base management
-│   ├── inference_engine.py      # Forward chaining engine
-│   └── explanation_facility.py  # Explanation generator
+├── data/                          
+│   ├── history.json
+│   └── rules.json         
 │
-├── ui/                          # User interface
-│   ├── __init__.py
-│   └── gui_interface.py         # Streamlit GUI (UPDATED)
-│
-├── utils/                       # Utility functions
-│   ├── __init__.py
-│   └── search_filter.py         # Search & filter functions
-│
-└── data/                        # Data files
-    ├── knowledge_base.json      # Rules database
-    └── history.json             # Consultation history
+├── utils/                       
+│   ├── rule_loader.py
+│   ├── search_filter.py
+    └── validators.py        
 ```
 
 ## 🚀 Instalasi dan Cara Menjalankan
@@ -79,11 +80,6 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-**Untuk Windows (PowerShell):**
-```bash
-venv\Scripts\Activate.ps1
-```
-
 **Untuk Linux/Mac:**
 ```bash
 source venv/bin/activate
@@ -93,12 +89,6 @@ Jika berhasil, terminal Anda akan menampilkan `(venv)` di awal baris:
 ```bash
 (venv) PS D:\Coding\Sistem-pakar-tanaman-padi> (sebagai contoh saja)
 ```
-
-> **⚠️ Troubleshooting PowerShell:**  
-> Jika muncul error "running scripts is disabled", jalankan:
-> ```powershell
-> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-> ```
 
 ### 📦 Langkah 4: Install Dependencies
 
@@ -157,95 +147,116 @@ Setelah selesai, nonaktifkan virtual environment dengan:
 deactivate
 ```
 
-## ✨ Fitur Utama
+## ✨ Fitur-Fitur Utama
 
-### 🔍 Panel Diagnosis (Kiri)
-- **Search Gejala**: Cari dan filter gejala berdasarkan keyword
-- **Pilih Gejala**: Checkbox dengan grid layout untuk memilih multiple gejala
-- **Diagnosis Button**: Jalankan forward chaining untuk mendapatkan hasil
-- **Hasil Diagnosis**:
-  - Nama penyakit/hama
-  - Confidence Factor (CF)
-  - Penjelasan reasoning
-  - Rekomendasi penanganan (numbered list)
+### 1. 🏠 Dashboard Utama
+
+Dashboard memberikan ringkasan statistik sistem:
+- **Total Aturan**: Jumlah rule dalam knowledge base
+- **Gejala Terdaftar**: Jumlah gejala yang ada dalam sistem
+- **Riwayat Konsultasi**: Jumlah diagnosis yang telah dilakukan
+
+### 2. 🔍 Diagnosa Baru
+
+Fitur utama untuk melakukan diagnosis penyakit padi:
+
+#### a. **Pencarian Gejala**
+- 🔎 Kotak pencarian untuk filter gejala berdasarkan kata kunci
+- Memudahkan menemukan gejala spesifik dari daftar yang panjang
+- Contoh pencarian: "daun", "batang", "bercak", dll.
+
+#### b. **Pemilihan Gejala**
+- ✅ Interface checkbox untuk memilih gejala yang diamati
+- Layout 2 kolom untuk tampilan yang rapi
+- Menampilkan jumlah dan daftar gejala yang dipilih secara real-time
+
+#### c. **Proses Diagnosa**
+- 🔬 Button "MULAI DIAGNOSA" untuk memulai analisis
+- Loading spinner saat proses inferensi
+- Validasi input (minimal 1 gejala harus dipilih)
+
+#### d. **Hasil Diagnosa**
+Halaman hasil menampilkan:
+- 📅 **Timestamp**: Waktu diagnosis dilakukan
+- 🧩 **Gejala yang Diamati**: Daftar lengkap gejala yang dipilih
+- 🩺 **Diagnosis**: Nama penyakit yang teridentifikasi
+- 📊 **Tingkat Kepercayaan**: Persentase CF dengan progress bar visual
+- 💡 **Rekomendasi Penanganan**: Langkah-langkah treatment yang disarankan
+- 📚 **Sumber Referensi**: Referensi ilmiah yang digunakan
+- 🔬 **Proses Analisis**: Step-by-step reasoning path
+
+### 3. 🕘 Riwayat Konsultasi
+
+Fitur untuk mengelola riwayat diagnosis:
+
+#### a. **Daftar Riwayat**
+- 📋 Menampilkan semua konsultasi sebelumnya
+- Urutan terbaru di atas
+- Card design yang informatif dan menarik
+
+#### b. **Pencarian Riwayat**
+- 🔍 Filter riwayat berdasarkan kata kunci
+- Pencarian di semua field (gejala, diagnosis, dll.)
+- Counter hasil pencarian
+
+#### c. **Detail Konsultasi**
+- Expander untuk setiap entry riwayat
+- Menampilkan informasi lengkap:
+  - Gejala yang diamati
+  - Hasil diagnosis
+  - Tingkat kepercayaan
+  - Rekomendasi penanganan
   - Sumber referensi
+  - Penjelasan reasoning
 
-### 🕘 Panel History (Kanan)
-- **Search History**: Filter history berdasarkan keyword
-- **Tampilan History**: Card dengan info lengkap konsultasi
-- **Export Options**:
-  - 📥 Download TXT (laporan lengkap)
-  - 📥 Download CSV (format tabel)
-- **Delete Button**: Hapus history yang tidak diperlukan
+#### d. **Manajemen Data**
+- 🗑️ Tombol "Hapus Semua" dengan konfirmasi
+- Double-click protection untuk menghindari penghapusan tidak sengaja
 
-### 🎨 Desain Modern
-- Gradient header hijau yang eye-catching
-- Card-based layout dengan shadows
-- Hover effects pada interactive elements
-- Responsive design untuk berbagai ukuran layar
-- Badge untuk menampilkan CF
-- Numbered circles untuk rekomendasi
+### 4. 📥 Export Laporan
 
-## 📝 File yang Diperbarui
+Sistem mendukung export dalam 2 format:
 
-### `gui_interface.py` - Perubahan Utama:
-1. ✅ Custom CSS untuk styling modern (gradient, shadows, hover effects)
-2. ✅ Card-based layout untuk semua komponen
-3. ✅ Grid layout untuk checkbox gejala (2 kolom)
-4. ✅ Badge untuk CF percentage
-5. ✅ Numbered circles untuk rekomendasi
-6. ✅ Delete button untuk history
-7. ✅ Improved spacing dan typography
-8. ✅ Responsive columns (2:1 ratio untuk main:history)
+#### a. **Format TXT**
+- 📄 Laporan lengkap dalam format teks
+- Include semua informasi diagnosis
+- Format rapi dan mudah dibaca
+- Cocok untuk dokumentasi dan arsip
 
-### `__init__.py` - Simplified:
-- Hanya export `GUI` class
-- Removed unused imports
+#### b. **Format CSV**
+- 📊 Format spreadsheet untuk analisis data
+- Bisa dibuka di Excel, Google Sheets, dll.
+- Cocok untuk analisis statistik
 
-## 📊 Data Format
+### 5. 🎨 User Interface
 
-### Knowledge Base (JSON)
-```json
-{
-  "RULE_ID": {
-    "IF": ["gejala1", "gejala2"],
-    "THEN": "Nama Penyakit",
-    "CF": 0.85,
-    "rekomendasi": ["rekomendasi1", "rekomendasi2"],
-    "source": "Sumber referensi"
-  }
-}
-```
+#### Desain Visual
+- **Color Scheme**: Hijau alam (tema pertanian)
+  - Primary: `#498428` (Hijau tua)
+  - Secondary: `#80B155` (Hijau sedang)
+  - Accent: `#C1D95C` (Hijau muda)
+  - Light: `#EAEF9D` (Kuning kehijauan)
 
-### History (JSON)
-```json
-[
-  {
-    "id": "20250124120000",
-    "timestamp": "2025-01-24 12:00:00",
-    "gejala": ["gejala1", "gejala2"],
-    "consequent": "Hama Wereng",
-    "cf": 0.85,
-    "rekomendasi": ["rekomendasi1"],
-    "source": "Sumber",
-    "reasoning": "Penjelasan reasoning..."
-  }
-]
-```
+#### Komponen UI
+- **Gradient Headers**: Header dengan gradien warna menarik
+- **Stat Boxes**: Kotak statistik dengan hover effect
+- **Symptom Cards**: Card untuk menampilkan gejala
+- **Result Cards**: Card khusus untuk hasil diagnosis dengan gradien
+- **History Items**: Card riwayat dengan animasi hover
+- **Reasoning Steps**: Step cards untuk proses analisis
 
-## 🐛 Troubleshooting
+#### Responsiveness
+- Layout 2-3 kolom yang responsive
+- Mobile-friendly design
+- Adaptive content sizing
 
-### Error: "File knowledge base tidak ditemukan"
-- Pastikan folder `data/` ada
-- Buat file `data/knowledge_base.json` dengan format yang benar
+### 6. 🔬 Explanation Facility
 
-### History tidak tersimpan
-- Pastikan folder `data/` memiliki write permission
-- Check apakah file `data/history.json` ter-create
-
-### Styling tidak muncul
-- Clear browser cache (Ctrl+F5)
-- Restart Streamlit server
+Sistem menyediakan penjelasan lengkap tentang proses reasoning:
+- **Trace Backward**: Melacak fakta apa yang digunakan
+- **Trace Forward**: Menunjukkan rule mana yang di-trigger
+- **Step-by-step**: Urutan inferensi yang dilakukan
+- **CF Calculation**: Menampilkan perhitungan certainty factor
 
 ## 📚 Dependencies
 
